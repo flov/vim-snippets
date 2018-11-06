@@ -75,19 +75,6 @@ snippet dispatch
 			${2}
 		}
 	});
-snippet ctor
-	constructor() {
-		super(...arguments);
-		${1}
-	}
-snippet cwm
-	componentWillMount() {
-		${1}
-	}
-snippet cdm
-	componentDidMount() {
-		${1}
-	}
 snippet cwu
 	componentWillUnmount() {
 		${1}
@@ -96,8 +83,6 @@ snippet cwrp
 	componentWillReceiveProps() {
 		${1}
 	}
-snippet icss
-	import './`Filename()`.css';
 snippet connect
 	connect((state, props) => ({
 		${1}
@@ -105,3 +90,12 @@ snippet connect
 	})();
 snippet bind
 	this.${1:method} = this.$1.bind(this);
+snippet Field
+	<Field name="${1}" label="${2}" component={${0}} />
+snippet Link
+	<Link to={${1}}>${0}</Link>
+snippet mstp
+	mapStateToProps = (state) => {
+		return { ${0} };
+	}
+
