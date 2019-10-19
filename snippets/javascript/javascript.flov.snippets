@@ -92,10 +92,17 @@ snippet bind
 	this.${1:method} = this.$1.bind(this);
 snippet Field
 	<Field name="${1}" label="${2}" component={${0}} />
+snippet Button
+	<Button title="${1}" onPress={() => ${2}} />
 snippet Link
 	<Link to={${1}}>${0}</Link>
 snippet mstp
 	mapStateToProps = (state) => {
 		return { ${0} };
 	}
-
+snippet require
+	const ${1:} = require('$1')
+snippet ()
+	() => {
+	  ${1}
+	}
