@@ -1,0 +1,36 @@
+snippet rnc
+	import React, { Component } from 'react';
+	import { View, Text } from 'react-native';
+
+	export default class ${1:`Filename()`} extends Component {
+		static navigationOptions = {
+			title: "${2:ScreenTitle}"
+		}
+
+		render() {
+			return (
+				<View>
+					<Text>${3:textInComponent}</Text>
+				</View>
+			);
+		}
+	}
+snippet rncsl
+	import React from 'react';
+	import { Text, View } from 'react-native';
+
+	const ${1:`Filename()`} = ({
+			${2:params},
+	}) => (
+			<View>
+					<Text>${2:textName}</Text>
+			</View>
+	);
+
+	export default ${1:`Filename()`};
+snippet View
+	<View>
+		${1}
+	</View>
+snippet Text
+	<Text>${1}</Text>

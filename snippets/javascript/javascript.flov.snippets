@@ -1,15 +1,30 @@
 snippet react
-	import React, { Component } from 'react';
+	import React, { Component } from 'react'
 
 	class ${1:`Filename()`} extends Component {
 		render() {
 			return (
 				<div>
 				</div>
-			);
+			)
 		}
 	}
-	export default $1;
+	export default $1
+snippet reactf
+	import React from 'react';
+	import PropTypes from 'prop-types'
+
+	const ${0:`Filename()`} = (props) => {
+		return (
+			${1}
+		)
+	}
+
+	$0.propTypes = {
+		${2}: PropTypes.${3}
+	}
+
+	export default $0
 snippet import
 	import ${1} from '${2}';
 snippet constructor
@@ -58,9 +73,6 @@ snippet reducer
 				return state;
 		}
 	};
-snippet it
-	it('${1}', () => {
-	});
 snippet describe
 	describe('${1}', () => {
 	});
@@ -96,6 +108,12 @@ snippet Button
 	<Button title="${1}" onPress={() => ${2}} />
 snippet Link
 	<Link to={${1}}>${0}</Link>
+snippet Col
+	<Col>${0}</Col>
+snippet Row
+	<Row>
+	  ${0}
+	</Row>
 snippet mstp
 	mapStateToProps = (state) => {
 		return { ${0} };
@@ -106,3 +124,22 @@ snippet ()
 	() => {
 	  ${1}
 	}
+snippet []
+	const [${1:}, set$1] = useState(${2})
+snippet iconnect
+	import connect from 'react-redux'
+snippet mapStateToProps
+	const mapStateToProps = (state) => {
+		return {
+			${1}
+		}
+	}
+
+	export default connect(mapStateToProps)(${2:`Filename()`})
+snippet Card
+	<Card>
+	  <CardBody>
+	  </CardBody>
+	</Card>
+snippet setTimeout
+	setTimeout(() => , 500)
