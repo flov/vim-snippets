@@ -114,6 +114,10 @@ snippet Row
 	<Row>
 	  ${0}
 	</Row>
+snippet Box
+	<Box>
+	  ${0}
+	</Box>
 snippet mstp
 	mapStateToProps = (state) => {
 		return { ${0} };
@@ -152,3 +156,7 @@ snippet getl
 	import get from 'lodash/get';
 snippet get
 	get(${1}, '${2}')${3}
+snippet function
+	function ${1}(${2}) {
+	  ${3}
+	}
