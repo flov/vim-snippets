@@ -12,17 +12,19 @@ snippet react
 	export default $1
 snippet reactf
 	import React from 'react';
-	import PropTypes from 'prop-types'
+	import { object } from 'prop-types'
 
-	const ${0:`Filename()`} = (props) => {
+	import { Box } from 'styleguide';
+
+	const ${0:`Filename()`} = ({${1}}) => {
 		return (
-			${1}
+			<Box>
+				${2}
+			</Box>
 		)
 	}
 
-	$0.propTypes = {
-		${2}: PropTypes.${3}
-	}
+	$0.propTypes = { }
 
 	export default $0
 snippet import
@@ -105,7 +107,7 @@ snippet bind
 snippet Field
 	<Field name="${1}" label="${2}" component={${0}} />
 snippet Button
-	<Button title="${1}" onPress={() => ${2}} />
+	<Button>${1}</Button>
 snippet Link
 	<Link to={${1}}>${0}</Link>
 snippet Col
@@ -151,7 +153,10 @@ snippet map
 	map((${1}) => {
 			${0}
 		})
-
+snippet filter
+	filter((${1}) => {
+			${0}
+		})
 snippet getl
 	import get from 'lodash/get';
 snippet get
@@ -160,3 +165,26 @@ snippet function
 	function ${1}(${2}) {
 	  ${3}
 	}
+snippet pt
+	${0:`Filename()`}.propTypes = {
+		${2}: PropTypes.${3}
+	}
+snippet pti
+	import PropTypes from 'prop-types'
+snippet forEach
+	forEach(${1} => ${0})
+snippet useEffect
+	useEffect(() => {
+	  ${1}
+	}, [${0}])
+snippet Headline
+	<Headline>${0}</Headline>
+snippet fbc
+	<Box variant='flex' flexDirection='column'>
+	  ${0}
+	</Box>
+snippet fb
+	<Box variant='flex'>
+	  ${0}
+	</Box>
+
