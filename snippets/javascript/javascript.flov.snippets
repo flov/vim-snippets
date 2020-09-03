@@ -12,19 +12,19 @@ snippet react
 	export default $1
 snippet reactf
 	import React from 'react';
-	import { object } from 'prop-types'
 
 	import { Box } from 'styleguide';
+	import { useTranslation } from '~/config';
 
-	const ${0:`Filename()`} = ({${1}}) => {
+	const ${0:`Filename()`} = () => {
+		const { t } = useTranslation('common');
+
 		return (
 			<Box>
 				${2}
 			</Box>
 		)
 	}
-
-	$0.propTypes = { }
 
 	export default $0
 snippet import
@@ -183,8 +183,21 @@ snippet fbc
 	<Box variant='flex' flexDirection='column'>
 	  ${0}
 	</Box>
+snippet fdc
+	flexDirection='column'
 snippet fb
 	<Box variant='flex'>
 	  ${0}
 	</Box>
-
+snippet jc
+	justifyContent='center'
+snippet ai
+	alignItems='center'
+snippet flex
+	variant='flex'
+snippet t
+	t('${0}')
+snippet styled
+	const ${1} = styled.${0}``
+snippet variant
+	variant='${0}'
